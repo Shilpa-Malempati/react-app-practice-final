@@ -1,56 +1,51 @@
-// class 14: fetching the data from an API with react
-import React, {Component} from "react"
+import React from 'react';
+import SimpleReactUsingClassComp from './SimpleReactUsingClassComp';
+import SimpleReactUsingFn from './SimpleReactUsingFn'
+import UsingRenderMethod from './UsingRenderMethod'
+import UseProperties from './UseProperties'
+import UsingSetState from './UsingSetState'
+import UsingReactComponentsAsChildren from './UsingReactComponentsAsChildren'
+import AccessNestedDataUsingprops from './AccessNestedDataUsingProps'
+import CustomPropTypeValidations from './CustomPropTypeValidations'
+import AllReactEvents from './AllReactEvents'
+import UseReactRef from './UseReactRef'
+import ReactLifeCycleMethodsEx1 from './ReactLifeCycleMethodsEx1'
+import ReactLifeCycleMethodEx2 from './ReactLifeCycleMethodEx2'
+import ComponentUpdateByNewProps from './ComponentUpdateByNewProps'
+import FetchingDataUsingMap from './FetchingDataUsingMap'
+import UseStateEx1 from './UseStateEx1'
+import UseStateEx2 from './UseStateEx2'
+import UseEffectEx1 from './UseEffectEx1'
+import UseEffectEx2 from './UseEffectEx2'
+class App extends React.Component {
+  render(){
+    return (
+        <div>
+           <SimpleReactUsingFn/>
+           {/* <SimpleReactUsingClassComp/>
+           <UsingRenderMethod/> */}
 
-// https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
-// https://swapi.co/
-// https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+           {/* using for for rendering default text */}
+           {/* <UseProperties/>
 
-class App extends Component {
-    constructor() {
-        super()
-        this.state = {
-            loading: false,
-            character: {}
-        }
-    }
-    
-    componentDidMount() {
-        this.setState({loading: true})
-        fetch("https://jsonplaceholder.typicode.com/todos/1",{
-          mode: 'cors',
-          headers: {
-            'Access-Control-Allow-Origin':'*'
-          }})
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    loading: false,
-                    character: data
-                })
-            })
-    }
-    
-    render() {
-        const text = this.state.loading ? "loading..." : this.state.character.name
-        return (
-            <div>
-                <p>{text}</p>
-            </div>
-        )
-    }
+           <UsingSetState/>
+           <UsingReactComponentsAsChildren/>
+           <AccessNestedDataUsingprops/>
+           <CustomPropTypeValidations/>
+           <AllReactEvents/>
+           <UseReactRef/>
+           <ReactLifeCycleMethodsEx1/>
+           <ReactLifeCycleMethodEx2/>
+           <ComponentUpdateByNewProps/>
+           <FetchingDataUsingMap/>
+           <UseStateEx1/>
+           <UseStateEx2/>
+           <UseEffectEx1/>
+           <UseEffectEx2/> */}
+        </div>
+    )
+  }
 }
 
 
-
-
 export default App
-
-
-
-
-
-
-
-
-
-
